@@ -1,0 +1,66 @@
+@import "../abstracts/variables";
+@import "../abstracts/animations";
+
+body {
+  font-family:"Lato",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  color: $color-default-grey;
+  /* Add a white space around the entire body to make it look more decent.*/
+}
+
+.nav-main {
+  color: $color-white;
+  font-weight: 700;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+
+  &--main {
+    display: block;
+    font-size: 4rem;
+    font-weight:900;
+    letter-spacing: 3rem;
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+  }
+
+  &--sub {
+    display: block;
+    font-size: $default-font-size;
+    font-weight: 400;
+    letter-spacing: 1.5rem;
+    animation-name: moveInRight;
+    animation-duration: 2s;
+  }
+}
+
+.footer {
+  &__list {
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: $color-black;
+    text-transform: uppercase;
+  }
+  &__title--subscription {
+    font-weight:100;
+    font-size: 3.5rem;
+    color: $color-black;
+    text-transform: capitalize;
+  }
+  &__title--social {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color:$color-grey-dark;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+
+

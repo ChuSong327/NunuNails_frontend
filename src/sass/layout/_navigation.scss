@@ -1,0 +1,37 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.nav-main {
+  right: 8%;
+  top:5%;
+  position: absolute;
+  z-index: 1;
+
+  &__item {
+    position: relative;
+    @include navigation-style;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 0;
+      height:2px;
+      bottom:0;
+      left:0;
+      background-color:$color-white;
+      transition: width .3s;
+    }
+
+    &:hover {
+      &::after {
+        width:100%;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color:inherit;
+  }
+}
