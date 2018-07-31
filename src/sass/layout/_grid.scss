@@ -10,7 +10,6 @@
   @include clearfix;
   // select all class attributes that start with “col-”
   [class^="col-"] {
-    background-color: orangered;
     float:left;
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
@@ -23,9 +22,10 @@
   display: inline-block;
 }
 
-// .col-1-of-2 {
-//   width: calc((100% - #{$gutter-horizontal}) / 2);
-// }
+.col-1-of-2 {
+  width: calc((100% - #{$gutter-horizontal}) / 2);
+  display: inline-block;
+}
 
 // .col-2-of-3 {
 //   width: calc(2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});

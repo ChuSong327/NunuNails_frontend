@@ -9,7 +9,9 @@ import { CoverHomepageComponent } from './cover-homepage/cover-homepage.componen
 import { FooterInfoListComponent } from './footer-info-list/footer-info-list.component';
 import { FooterSubscriptionComponent } from './footer-subscription/footer-subscription.component';
 import { FooterFollowListComponent } from './footer-follow-list/footer-follow-list.component';
-import { SectionCategoryComponent } from './section-category/section-category.component';
+import { CategoryWhiteComponent } from './category-white/category-white.component';
+import { CategoryColoredComponent } from './category-colored/category-colored.component';
+import { CategoryWhite2Component } from './category-white2/category-white2.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { SectionCategoryComponent } from './section-category/section-category.co
     FooterInfoListComponent,
     FooterSubscriptionComponent,
     FooterFollowListComponent,
-    SectionCategoryComponent
+    CategoryWhiteComponent,
+    CategoryColoredComponent,
+    CategoryWhite2Component,
   ],
   imports: [
     BrowserModule

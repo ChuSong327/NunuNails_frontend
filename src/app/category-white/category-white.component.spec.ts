@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SectionCategoryComponent } from './section-category.component';
+import { CategoryWhiteComponent } from './category-white.component';
 
-describe('SectionCategoryComponent', () => {
-  let component: SectionCategoryComponent;
-  let fixture: ComponentFixture<SectionCategoryComponent>;
+describe('CategoryWhiteComponent', () => {
+  let component: CategoryWhiteComponent;
+  let fixture: ComponentFixture<CategoryWhiteComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SectionCategoryComponent ]
+      declarations: [ CategoryWhiteComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SectionCategoryComponent);
+    fixture = TestBed.createComponent(CategoryWhiteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
