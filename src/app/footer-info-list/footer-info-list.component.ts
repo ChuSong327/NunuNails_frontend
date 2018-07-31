@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterInfoListComponent implements OnInit {
 
+  items=["faq", "shipping time", "contact"];
+
   constructor() { }
 
   ngOnInit() {

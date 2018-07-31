@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainNavbarComponent implements OnInit {
 
+  items=["shop", "size&style", "glue", "tools"];
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

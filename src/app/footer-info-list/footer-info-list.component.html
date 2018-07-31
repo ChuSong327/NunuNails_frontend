@@ -1,9 +1,7 @@
 <div class="col-1-of-3">
   <div class="footer__navigation">
     <ul class="footer__list">
-      <li class="footer__item"><a href="#" class="footer__link">FAQ</a></li>
-      <li class="footer__item"><a href="#" class="footer__link">Shipping Time</a></li>
-      <li class="footer__item"><a href="#" class="footer__link">Contact</a></li>
+      <li *ngFor="let item of items" class="footer__item"><a href="#" class="footer__link">{{ item }}</a></li>
     </ul>
   </div>
 </div>

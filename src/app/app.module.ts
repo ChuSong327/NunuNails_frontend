@@ -9,6 +9,7 @@ import { CoverHomepageComponent } from './cover-homepage/cover-homepage.componen
 import { FooterInfoListComponent } from './footer-info-list/footer-info-list.component';
 import { FooterSubscriptionComponent } from './footer-subscription/footer-subscription.component';
 import { FooterFollowListComponent } from './footer-follow-list/footer-follow-list.component';
+import { SectionCategoryComponent } from './section-category/section-category.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FooterFollowListComponent } from './footer-follow-list/footer-follow-li
     CoverHomepageComponent,
     FooterInfoListComponent,
     FooterSubscriptionComponent,
-    FooterFollowListComponent
+    FooterFollowListComponent,
+    SectionCategoryComponent
   ],
   imports: [
     BrowserModule
