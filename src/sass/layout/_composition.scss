@@ -1,9 +1,10 @@
+@import "../abstracts/variables";
+
 .composition {
   position: relative;
 
   &__photo {
     width: 40%;
-
     box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
     position: absolute;
     z-index: 10;

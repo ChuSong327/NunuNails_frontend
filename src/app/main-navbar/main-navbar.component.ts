@@ -7,7 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainNavbarComponent implements OnInit {
 
-  items=["shop", "size&style", "glue", "tools"];
+  items=[
+    {
+      title: "shop",
+      link: "/press-on-nails"
+    },
+    {
+      title: "size&styles",
+      link: "/size&styles"
+    },
+    {
+      title: "glue",
+      link: "/glue"
+    },
+    {
+      title: "tools",
+      link: "/tools"
+    }
+  ];
 
   constructor() { }
 

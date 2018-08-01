@@ -19,3 +19,46 @@
     @include text-box-style;
   }
 }
+
+.cover {
+  margin: 2rem 0;
+  height:40rem;
+  position: relative;
+
+  &__text-box {
+    @include text-box-style;
+    background-color: rgba($color-white, 0.6);
+    padding:4rem 6rem 5rem 6rem;
+  }
+
+}
+
+.cover--press-on {
+  background-image: linear-gradient(to right,
+                    $color-white-transparent-light,
+                    $color-white-transparent-dark,
+                    $color-white-transparent-light),
+                    url("https://res.cloudinary.com/chu327/image/upload/v1533080890/Nunu%20Nails/hero2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.cover--glue-on {
+  background-image: linear-gradient(to right,
+                    $color-white-transparent-light,
+                    $color-white-transparent-dark,
+                    $color-white-transparent-light),
+                    url("https://res.cloudinary.com/chu327/image/upload/v1533080888/Nunu%20Nails/hero3.jpg");
+  background-size:cover;
+  background-position:center;
+}
+
+.cover--nude {
+  background-image: linear-gradient(to right,
+                    $color-white-transparent-light,
+                    $color-white-transparent-dark,
+                    $color-white-transparent-light),
+                    url("https://res.cloudinary.com/chu327/image/upload/v1533080888/Nunu%20Nails/hero4.jpg");
+  background-size:cover;
+  background-position:center;
+}

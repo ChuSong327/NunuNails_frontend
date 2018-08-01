@@ -12,6 +12,16 @@ import { FooterFollowListComponent } from './footer-follow-list/footer-follow-li
 import { CategoryWhiteComponent } from './category-white/category-white.component';
 import { CategoryColoredComponent } from './category-colored/category-colored.component';
 import { CategoryWhite2Component } from './category-white2/category-white2.component';
+import { PageProductPressOnComponent } from './page-product-press-on/page-product-press-on.component';
+import { PageProductGlueOnComponent } from './page-product-glue-on/page-product-glue-on.component';
+import { PageProductNudeComponent } from './page-product-nude/page-product-nude.component';
+import { MinorNavbarComponent } from './minor-navbar/minor-navbar.component';
+
+import { AppRoutingModule } from './/app-routing.module';
+import { CoverPressOnComponent } from './cover-press-on/cover-press-on.component';
+import { CoverGlueOnComponent } from './cover-glue-on/cover-glue-on.component';
+import { CoverNudeComponent } from './cover-nude/cover-nude.component';
+
 
 @NgModule({
   declarations: [
@@ -26,9 +36,17 @@ import { CategoryWhite2Component } from './category-white2/category-white2.compo
     CategoryWhiteComponent,
     CategoryColoredComponent,
     CategoryWhite2Component,
+    PageProductPressOnComponent,
+    PageProductGlueOnComponent,
+    PageProductNudeComponent,
+    MinorNavbarComponent,
+    CoverPressOnComponent,
+    CoverGlueOnComponent,
+    CoverNudeComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
