@@ -29,28 +29,21 @@ const productImagePath = [
 
 const productCategory = [ "press-on", "glue-on", "nude french"];
 
-let products = [];
+let done = 0;
 for(let i = 0; i < BUILD_PRODUCTS_NUM; i++) {
-    products.push(
-        new Products({
-            name: "Nunu nails",
-            category: productCategory[Math.floor(Math.random() * 3)], 
-            description: faker.lorem.sentence(),
-            price: faker.commerce.price(),
-            imagePath: productImagePath[Math.floor(Math.random() * 16)]
-        })
-    )
+    Products.create({
+        name: "Nunu nails",
+        category: productCategory[Math.floor(Math.random() * 3)], 
+        description: faker.lorem.sentence(),
+        price: faker.commerce.price(),
+        imagePath: productImagePath[Math.floor(Math.random() * 16)]
+    });
+    if(done === BUILD_PRODUCTS_NUM){
+        mongoose.disconnect();
+    }
 };
 
-let done = 0;
-for(let i = 0; i < products.length; i++) {
-    products[i].save(() => {
-        done++;
-        if(done === products.length) {
-            mongoose.disconnect();
-        }
-    });
-};
+
 
 
  
