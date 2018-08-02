@@ -6,7 +6,6 @@ const Products = require("../../db/products");
 router.get("/", (req, res) => {
     Products.find()
         .then(products => {
-            console.log("GET HERE")
             res.json(products);
         })
         .catch(err => {

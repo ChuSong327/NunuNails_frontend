@@ -4,7 +4,6 @@ const router = express.Router();
 const Users = require("../../db/users");
 
 router.get("/", (req, res) => {
-    console.log("in users route")
     Users.find()
         .then(users => {
             res.json(users);
