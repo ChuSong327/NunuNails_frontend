@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { PageHomepageComponent } from './page-homepage/page-homepage.component';
@@ -16,12 +17,9 @@ import { PageProductPressOnComponent } from './page-product-press-on/page-produc
 import { PageProductGlueOnComponent } from './page-product-glue-on/page-product-glue-on.component';
 import { PageProductNudeComponent } from './page-product-nude/page-product-nude.component';
 import { MinorNavbarComponent } from './minor-navbar/minor-navbar.component';
-
-import { AppRoutingModule } from './/app-routing.module';
 import { CoverPressOnComponent } from './cover-press-on/cover-press-on.component';
 import { CoverGlueOnComponent } from './cover-glue-on/cover-glue-on.component';
 import { CoverNudeComponent } from './cover-nude/cover-nude.component';
-
 
 @NgModule({
   declarations: [
