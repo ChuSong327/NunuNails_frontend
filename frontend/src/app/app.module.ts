@@ -1,6 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { PageHomepageComponent } from './page-homepage/page-homepage.component';
@@ -20,8 +21,14 @@ import { MinorNavbarComponent } from './minor-navbar/minor-navbar.component';
 import { CoverPressOnComponent } from './cover-press-on/cover-press-on.component';
 import { CoverGlueOnComponent } from './cover-glue-on/cover-glue-on.component';
 import { CoverNudeComponent } from './cover-nude/cover-nude.component';
+import { ProductPressOnComponent } from './product-press-on/product-press-on.component';
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
   declarations: [
     AppComponent,
     PageHomepageComponent,
@@ -41,10 +48,7 @@ import { CoverNudeComponent } from './cover-nude/cover-nude.component';
     CoverPressOnComponent,
     CoverGlueOnComponent,
     CoverNudeComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
+    ProductPressOnComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
