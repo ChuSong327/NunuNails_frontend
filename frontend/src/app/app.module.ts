@@ -21,7 +21,7 @@ import { MinorNavbarComponent } from './minor-navbar/minor-navbar.component';
 import { CoverPressOnComponent } from './cover-press-on/cover-press-on.component';
 import { CoverGlueOnComponent } from './cover-glue-on/cover-glue-on.component';
 import { CoverNudeComponent } from './cover-nude/cover-nude.component';
-import { ProductPressOnComponent } from './product-press-on/product-press-on.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   imports: [
@@ -48,7 +48,7 @@ import { ProductPressOnComponent } from './product-press-on/product-press-on.com
     CoverPressOnComponent,
     CoverGlueOnComponent,
     CoverNudeComponent,
-    ProductPressOnComponent,
+    ProductComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
