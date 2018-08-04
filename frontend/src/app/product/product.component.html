@@ -1,7 +1,7 @@
 <div class="product">
   <div *ngFor="let product of products" class="product__item">
     <img src={{product.imagePath}} class="product__image">
-    <h3 class="product__name">{{product.name}}</h3>
+    <h3 class="product__name">{{product.name}}<span class="product__category">{{product.category}} nails</span></h3>
     <span class="product__price">{{product.price | currency: "USD"}}</span>
   </div>
 </div>

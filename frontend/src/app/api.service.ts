@@ -42,6 +42,19 @@ export class ApiService {
     )
   };
 
+  getGlueOnNails(): Observable<any> {
+    return this.http.get(glueOnUrl, httpOptions).pipe(
+      map(this.extractData),
+      catchError(this.handleError)
+    )
+  };
+
+  getNudeFrenchNails(): Observable<any> {
+    return this.http.get(nudeFrenchUrl, httpOptions).pipe(
+      map(this.extractData),
+      catchError(this.handleError)
+    )
+  };
 
 
 }

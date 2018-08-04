@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from "../api.service";
 
 @Component({
   selector: 'app-page-product-nude',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageProductNudeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api:ApiService) { }
+
+  products: any;
 
   ngOnInit() {
+    this.api.getNudeFrenchNails()
+      .subscribe(res => {
+        this.products = res;
+      }, err => {
+        console.log(err);
+      })
   }
-
 }
