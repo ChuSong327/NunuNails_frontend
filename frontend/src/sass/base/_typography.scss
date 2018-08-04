@@ -116,5 +116,14 @@ body {
   }
 }
 
+.product {
+  &__name {
+    font-size: 1.5rem;
+  }
+
+  &__price {
+    font-size: 1.4rem;
+  }
+}
 
 
