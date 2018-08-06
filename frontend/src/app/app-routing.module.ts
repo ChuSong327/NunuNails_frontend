@@ -6,14 +6,16 @@ import { PageProductPressOnComponent } from "./page-product-press-on/page-produc
 import { PageProductGlueOnComponent } from "./page-product-glue-on/page-product-glue-on.component";
 import { PageProductNudeComponent } from "./page-product-nude/page-product-nude.component";
 import { PageProductDetailComponent } from './page-product-detail/page-product-detail.component';
+import { PageCheckoutComponent } from './page-checkout/page-checkout.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/homepage", pathMatch: "full" },
   { path: "homepage", component: PageHomepageComponent },
   { path: "press-on-nails", component: PageProductPressOnComponent },
-  { path: "glue-on-nails", component: PageProductGlueOnComponent},
-  { path: "nude-acrylic-french", component: PageProductNudeComponent},
-  { path: "product-detail/:product_id", component: PageProductDetailComponent}
+  { path: "glue-on-nails", component: PageProductGlueOnComponent },
+  { path: "nude-acrylic-french", component: PageProductNudeComponent },
+  { path: "product-detail/:product_id", component: PageProductDetailComponent },
+  { path: "checkout/:user_id", component: PageCheckoutComponent }
 ]
 
 @NgModule({

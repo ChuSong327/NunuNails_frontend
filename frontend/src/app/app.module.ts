@@ -24,6 +24,7 @@ import { CoverNudeComponent } from './cover-nude/cover-nude.component';
 import { ProductComponent } from './product/product.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { PageProductDetailComponent } from './page-product-detail/page-product-detail.component';
+import { PageCheckoutComponent } from './page-checkout/page-checkout.component';
 
 @NgModule({
   imports: [
@@ -53,6 +54,7 @@ import { PageProductDetailComponent } from './page-product-detail/page-product-d
     ProductComponent,
     ProductDetailComponent,
     PageProductDetailComponent,
+    PageCheckoutComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
