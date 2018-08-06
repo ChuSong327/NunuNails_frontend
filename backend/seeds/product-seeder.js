@@ -34,7 +34,7 @@ for(let i = 0; i < BUILD_PRODUCTS_NUM; i++) {
     Products.create({
         name: "Nunu nails",
         category: productCategory[Math.floor(Math.random() * 3)], 
-        description: faker.lorem.sentence(),
+        description: faker.lorem.paragraph(),
         price: faker.commerce.price(),
         imagePath: productImagePath[Math.floor(Math.random() * 16)]
     });
