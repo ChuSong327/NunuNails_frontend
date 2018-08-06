@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/core';
-import { NgOnChangesFeature } from '../../../node_modules/@angular/core/src/render3';
-// import { ApiService } from "../api.service";
+
 
 @Component({
   selector: 'app-product',
@@ -19,5 +18,9 @@ export class ProductComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges){
     this.products = changes.items.currentValue;
+  }
+
+  onClick(event) {
+    console.log(event.target)
   }
 };

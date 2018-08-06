@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: "press-on-nails", component: PageProductPressOnComponent },
   { path: "glue-on-nails", component: PageProductGlueOnComponent},
   { path: "nude-acrylic-french", component: PageProductNudeComponent},
-  { path: "product-detail", component: PageProductDetailComponent}
+  { path: "product-detail/:product_id", component: PageProductDetailComponent}
 ]
 
 @NgModule({

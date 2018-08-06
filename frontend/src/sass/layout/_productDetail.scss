@@ -2,18 +2,16 @@
 .product-detail {
   margin-top: 10rem;
   padding: 0 20rem;
+  height: 60vh;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: flex-start;
 
-  &__info {
-    margin-left: 10rem;
-  }
-
   &__image {
-    height: 40%;
-    width: 38%;
+    height: 90%;
+    width: 40%;
+
   }
 
   &__title {
@@ -62,6 +60,7 @@
     background-color:$color-default-grey;
     color: $color-white;
     border-radius: 5px;
+    cursor: pointer;
   }
 
   &__description {

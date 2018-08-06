@@ -1,14 +1,14 @@
-<div class="product-detail">
+<div *ngIf="product" class="product-detail">
   <img
-    src="https://res.cloudinary.com/chu327/image/upload/v1533083818/Nunu%20Nails/2.jpg"
+    src={{product.imagePath}}
     class="product-detail__image">
   <div class="product-detail__info">
-    <h2 class="product-detail__title">Nunu Nails</h2>
-    <h4 class="product-detail__price">Price</h4>
+    <h2 class="product-detail__title">{{product.name}}</h2>
+    <h4 class="product-detail__price">{{product.price | currency}}</h4>
     <form class="product-detail__quantity">
       <input type="number" id="quantity" min="0" class="product-detail__input" value="1">
       <label for="quantity" class="product-detail__label btn-brown">Add</label>
     </form>
-    <p class="product-detail__description">Description</p>
+    <p class="product-detail__description">{{product.description}}</p>
   </div>
 </div>

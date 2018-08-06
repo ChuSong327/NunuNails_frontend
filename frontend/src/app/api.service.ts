@@ -10,6 +10,7 @@ const httpOptions = {
 const pressOnUrl = "http://localhost:3000/api/products/press-on";
 const glueOnUrl = "http://localhost:3000/api/products/glue-on";
 const nudeFrenchUrl = "http://localhost:3000/api/products/nude-french";
+const productDetail = "http://localhost:3000/api/products/:product_id";
 
 @Injectable({
   providedIn: 'root'
@@ -51,6 +52,14 @@ export class ApiService {
 
   getNudeFrenchNails(): Observable<any> {
     return this.http.get(nudeFrenchUrl, httpOptions).pipe(
+      map(this.extractData),
+      catchError(this.handleError)
+    )
+  };
+
+  getProductDetail(productUrl): Observable<any> {
+    console.log()
+    return this.http.get(productUrl, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError)
     )

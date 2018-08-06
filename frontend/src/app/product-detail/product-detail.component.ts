@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailComponent implements OnInit {
 
+  @Input() item;
+
+  product = [];
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+  ngOnChanges(changes: SimpleChanges){
+    this.product = changes.item.currentValue;
+  }
 }
