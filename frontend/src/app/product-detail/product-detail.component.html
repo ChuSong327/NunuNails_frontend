@@ -7,8 +7,9 @@
     <h4 class="product-detail__price">{{product.price | currency}}</h4>
     <form class="product-detail__quantity">
       <input type="number" id="quantity" min="0" class="product-detail__input" value="1">
-      <label for="quantity" class="product-detail__label btn-brown">Add</label>
+      <label for="quantity" class="product-detail__label">Add</label>
+      <label routerLink="/checkout/:user_id" type="submit" class="product-detail__button" >Check Out</label>
     </form>
-    <p class="product-detail__description">{{product.description}}</p>
+    <p class="product-detail__description"><span class="product-detail__heading">Description</span>: <br/>{{product.description}}</p>
   </div>
 </div>
