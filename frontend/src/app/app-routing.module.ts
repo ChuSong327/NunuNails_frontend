@@ -7,6 +7,7 @@ import { PageProductGlueOnComponent } from "./page-product-glue-on/page-product-
 import { PageProductNudeComponent } from "./page-product-nude/page-product-nude.component";
 import { PageProductDetailComponent } from './page-product-detail/page-product-detail.component';
 import { PageCheckoutComponent } from './page-checkout/page-checkout.component';
+import { PageCartComponent } from './page-cart/page-cart.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/homepage", pathMatch: "full" },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: "glue-on-nails", component: PageProductGlueOnComponent },
   { path: "nude-acrylic-french", component: PageProductNudeComponent },
   { path: "product-detail/:product_id", component: PageProductDetailComponent },
+  { path: "shopping-cart", component: PageCartComponent},
   { path: "checkout/:user_id", component: PageCheckoutComponent }
 ]
 

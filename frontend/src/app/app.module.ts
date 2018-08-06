@@ -25,6 +25,9 @@ import { ProductComponent } from './product/product.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { PageProductDetailComponent } from './page-product-detail/page-product-detail.component';
 import { PageCheckoutComponent } from './page-checkout/page-checkout.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { PageCartComponent } from './page-cart/page-cart.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   imports: [
@@ -55,6 +58,9 @@ import { PageCheckoutComponent } from './page-checkout/page-checkout.component';
     ProductDetailComponent,
     PageProductDetailComponent,
     PageCheckoutComponent,
+    CheckoutComponent,
+    PageCartComponent,
+    CartComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
