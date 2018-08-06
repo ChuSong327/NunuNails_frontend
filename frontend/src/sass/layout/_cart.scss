@@ -63,7 +63,8 @@
 
     &:hover {
       background-color: $color-default-grey;
-      color:  $color-white
+      color:  $color-white;
+      cursor: pointer;
     }
   }
 }
@@ -118,6 +119,52 @@
   &__four {
     width: 10rem;
     text-align: right;
+  }
+}
+
+.action {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5rem;
+
+  &__shopping,
+  &__checkout {
+    height: 3.5rem;
+    width: 15rem;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+    color: black;
+  }
+
+  &__shopping {
+    border: solid;
+    border-width: 1px;
+
+    &:hover {
+      background-color: $color-default-grey;
+      color: $color-white;
+      border: none;
+      font-weight: 300;
+      cursor: pointer;
+    }
+  }
+
+  &__checkout {
+    background-color: $color-default-grey;
+    color: $color-white;
+    font-weight: 300;
+
+    &:hover {
+      background-color: transparent;
+      border:solid;
+      border-width: 1px;
+      color: $color-black;
+      cursor: pointer;
+      font-weight: 400;
+    }
   }
 }
 
