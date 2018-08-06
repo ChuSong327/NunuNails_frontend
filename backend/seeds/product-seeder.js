@@ -6,7 +6,7 @@ const Products = require("../db/products");
 //db connection
 mongoose.connect("mongodb://localhost:27017/nununails", { useNewUrlParser: true });
 
-const BUILD_PRODUCTS_NUM = 100;
+const BUILD_PRODUCTS_NUM = 500;
 
 const productImagePath = [
     "https://res.cloudinary.com/chu327/image/upload/v1533083817/Nunu%20Nails/1.jpg",

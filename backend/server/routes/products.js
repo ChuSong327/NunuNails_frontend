@@ -43,4 +43,16 @@ router.get("/nude-french", (req, res) => {
         })
 });
 
+router.get("/:product_id", (req, res) => {
+    const productId = req.params.product_id;
+    Products.findOne({_id: productId})
+        .then(product => {
+            // console.log("this is the product: ", product)
+            res.json(product);
+        })
+        .catch(err => {
+            res.json("This is an error: ", err);
+        })
+})
+
 module.exports = router;
