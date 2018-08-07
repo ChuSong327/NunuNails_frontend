@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { ActivatedRoute } from '../../../node_modules/@angular/router';
 import { ApiService } from "../api.service";
 
@@ -16,16 +16,19 @@ export class PageProductDetailComponent implements OnInit {
     ) { }
 
   product: any;
+  quantity: number;
 
   ngOnInit() {
-
     const productUrl = `http://localhost:3000/api/products/${this.route.snapshot.params.product_id}`;
-
     this.api.getProductDetail(productUrl)
       .subscribe(res => {
         this.product = res;
       }, err => {
         console.log(err);
       })
+  }
+
+  getQuantity(value) {
+    this.quantity = value;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-product-detail',
@@ -8,6 +8,7 @@ import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/cor
 export class ProductDetailComponent implements OnInit {
 
   @Input() item;
+  @Output() updateQuantity = new EventEmitter<any>();
 
   product = [];
 
@@ -17,5 +18,9 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges){
     this.product = changes.item.currentValue;
+  }
+
+  handleAddClick(value){
+    this.updateQuantity.emit(value);
   }
 }
