@@ -1,6 +1,14 @@
 @import "../abstracts/mixins";
 @import "../abstracts/variables";
 
+.nav-header {
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .nav-main {
   right: 8%;
   top:5%;
@@ -37,11 +45,12 @@
 }
 
 .nav-minor {
-  float:right;
-  position:absolute;
-  right: 13%;
-  top: 25%;
-  color: $color-grey-dark;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-right: 2rem;
 
   &__item {
     position: relative;
@@ -70,13 +79,22 @@
     text-decoration: none;
     color:inherit;
   }
+
+  &__cart {
+    font-size: 2.2rem;
+    cursor: pointer;
+  }
+
+  &__quantity {
+    font-size: 1.4rem;
+    margin-left: 5px;
+    color: $color-black;
+  }
 }
 
 .nav-brand-name {
   left: 7%;
   top: 2%;
-  position: absolute;
-  display:inline-block;
   font-size: 1.9rem;
   font-weight:700;
   letter-spacing: 2px;
@@ -89,7 +107,3 @@
   }
 }
 
-.nav-header {
-  height: 8vh;
-  position:relative;
-}

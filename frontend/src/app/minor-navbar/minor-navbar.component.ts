@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
-import { SimplePlaceholderMapper } from '../../../node_modules/@angular/compiler/src/i18n/serializers/serializer';
 
 @Component({
   selector: 'app-minor-navbar',
@@ -36,15 +35,19 @@ export class MinorNavbarComponent implements OnInit {
 
   @Input() value;
 
-  quantity: any;
+  quantity = [];
+  product = [];
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    // this.product.push(JSON.parse(localStorage.cart));
+    // console.log(this.product);
+  }
 
   ngOnChanges(changes: SimpleChanges){
     this.quantity = changes.value.currentValue;
-    // console.log("this is the quantity: ", this.quantity)
+    console.log("this is the quantity: ", this.quantity)
   }
 
 }

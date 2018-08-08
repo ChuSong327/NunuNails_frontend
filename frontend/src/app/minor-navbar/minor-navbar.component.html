@@ -5,6 +5,7 @@
   <nav class="nav-minor">
     <ul>
       <li *ngFor="let item of items" class="nav-minor__item"><a routerLink={{item.link}} class="nav-minor__link">{{item.title}}</a></li>
+      <i class="fa fa-shopping-cart nav-minor__cart" aria-hidden="true"></i><span class="nav-minor__quantity">{{quantity}}</span>
     </ul>
   </nav>
 </header>

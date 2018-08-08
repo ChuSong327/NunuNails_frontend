@@ -16,7 +16,7 @@ export class PageProductDetailComponent implements OnInit {
     ) { }
 
   product: any;
-  quantity: number;
+  quantity: any;
 
   ngOnInit() {
     const productUrl = `http://localhost:3000/api/products/${this.route.snapshot.params.product_id}`;

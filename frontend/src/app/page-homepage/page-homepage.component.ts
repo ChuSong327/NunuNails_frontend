@@ -8,7 +8,5 @@ import { Component, OnInit} from '@angular/core';
 export class PageHomepageComponent implements OnInit {
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
