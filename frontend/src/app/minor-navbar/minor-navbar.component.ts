@@ -35,20 +35,24 @@ export class MinorNavbarComponent implements OnInit {
 
   @Input() value;
 
-  quantity = [];
-  product = [];
+  quantity: number;
+  products = [];
 
   constructor() { }
 
   ngOnInit() {
-    // this.product.push(JSON.parse(localStorage.cart));
-    // console.log(this.product);
+    if(localStorage.length){
+      this.products = JSON.parse(localStorage.getItem("cart"));
+    };
+
+    this.quantity = 0;
+    for(const product of this.products) {
+        const { quantity } = product;
+        this.quantity += Number(quantity);
+    }
   }
 
   ngOnChanges(changes: SimpleChanges){
     this.quantity = changes.value.currentValue;
   }
-
-
-
 }
