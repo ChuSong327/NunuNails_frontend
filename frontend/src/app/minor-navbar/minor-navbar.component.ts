@@ -47,7 +47,8 @@ export class MinorNavbarComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges){
     this.quantity = changes.value.currentValue;
-    console.log("this is the quantity: ", this.quantity)
   }
+
+
 
 }

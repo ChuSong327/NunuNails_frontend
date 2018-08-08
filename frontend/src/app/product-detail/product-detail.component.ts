@@ -26,6 +26,7 @@ interface Products {
   templateUrl: "./product-detail.component.html",
   styleUrls: ["./product-detail.component.sass"]
 })
+
 export class ProductDetailComponent implements OnInit {
   @Input() item;
   @Output() updateQuantity = new EventEmitter<any>();
@@ -35,6 +36,8 @@ export class ProductDetailComponent implements OnInit {
 
   /** Contains all the products. */
   productsArray: Products[] = [];
+
+  quantity: number;
 
   constructor() {}
 
@@ -59,9 +62,7 @@ export class ProductDetailComponent implements OnInit {
 
   handleAddClick(quantityValue) {
     let currentProductId = this.product._id;
-
-    /** Emit the quantity value to the paranet. */
-    this.updateQuantity.emit(quantityValue);
+    this.quantity = 0;
 
     /** If localstorage has items. */
     this.productsArray = this.getCartFromStorage;
@@ -84,6 +85,16 @@ export class ProductDetailComponent implements OnInit {
         quantity: quantityValue
       });
     }
+
+     /** Add updated cart to localStorage. */
     this.addCartToStorage(this.productsArray);
+
+     /** Get the total quantity of product in cart */
+    for(const product of this.productsArray) {
+      this.quantity += Number(product.quantity);
+    }
+
+    /** Emit the quantity value to the paranet. */
+    this.updateQuantity.emit(this.quantity);
   }
 }
