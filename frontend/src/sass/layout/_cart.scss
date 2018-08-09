@@ -66,6 +66,10 @@
       color:  $color-white;
       cursor: pointer;
     }
+
+    &:focus {
+      outline: none;
+    }
   }
 }
 
@@ -137,6 +141,11 @@
     letter-spacing: 1px;
     font-size: 1.3rem;
     color: black;
+  }
+
+  &__shopping,
+  &__checkout:focus {
+    outline: none;
   }
 
   &__shopping {
