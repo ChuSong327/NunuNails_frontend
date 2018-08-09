@@ -1,6 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  SimpleChanges,
+  Output,
+  EventEmitter,
+ } from '@angular/core';
 
-interface Product {
+ interface Product {
   _id: string;
   name: string;
   category: string;
@@ -20,32 +27,39 @@ interface Products {
 })
 export class CartComponent implements OnInit {
 
+  @Input() items;
+  @Input() price;
+  @Input() value;
+  @Output() updateProducts = new EventEmitter<any>();
+
+  currentProducts: Products[] = [];
+  totalPrice: number;
+  quantity: number;
+
   constructor() { }
 
-  /** Define products stored in localStorage */
-  products: Products[] = [];
+  ngOnInit() {}
 
-  totalPrice: number;
-
-  /** Get products in the shopping cart */
-  private get getCartFromStorage(): Products[] {
-    if(localStorage.length) {
-      return JSON.parse(localStorage.getItem("cart"));
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes.items){
+      this.currentProducts = changes.items.currentValue;
     }
+    this.totalPrice = changes.price.currentValue;
+    this.quantity = changes.value.currentValue;
   }
 
-  /** Get the total price of all products in the shopping cart */
-  private getTotalPrice(products)  {
-    let total = 0;
-    for(const product of products) {
-      total = Number(total) + Number(product.product.price * product.quantity);
+  handleRemove(event){
+    /** Remove the selected item from cart, update the total price of left items, and update the number of quantity */
+    for(const product of this.currentProducts) {
+      if(event.target.id === product.productId) {
+        let index = this.currentProducts.indexOf(product);
+        this.currentProducts.splice(index, 1);
+        this.totalPrice = Number(this.totalPrice) - Number(product.product.price) * Number(product.quantity);
+        this.quantity = Number(this.quantity) - Number(product.quantity);
+      }
     }
-    return total;
-  }
 
-  ngOnInit() {
-   this.products = this.getCartFromStorage;
-   this.totalPrice = this.getTotalPrice(this.products);
+    /** Emit the updated products, quantity, and totalPrice to Parent.  */
+    this.updateProducts.emit({products: this.currentProducts, quantity: this.quantity, totalPrice: this.totalPrice});
   }
-
 }

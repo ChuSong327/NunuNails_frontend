@@ -18,7 +18,7 @@ interface Product {
 interface Products {
   product: Product;
   productId: string;
-  quantity: string;
+  quantity: number;
 }
 
 @Component({
@@ -72,7 +72,7 @@ export class ProductDetailComponent implements OnInit {
     for (const product of this.productsArray) {
       if (product.productId === currentProductId) {
         const {quantity} = product;
-        product.quantity = String(Number(quantity) + Number(quantityValue));
+        product.quantity = Number(quantity) + Number(quantityValue);
         productExistInStorage = true;
       }
     }

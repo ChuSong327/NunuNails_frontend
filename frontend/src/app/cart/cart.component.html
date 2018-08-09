@@ -1,6 +1,6 @@
 <div class="cart">
   <div class="cart-tables">
-      <table *ngIf="products" class="cart-product">
+      <table *ngIf="currentProducts" class="cart-product">
           <tr class="row-product__one">
             <th class="cart-product__heading column__one">Product</th>
             <th class="cart-product__heading column__two">Description</th>
@@ -8,7 +8,7 @@
             <th class="cart-product__heading column__four">Price</th>
             <th class="cart-product__heading column__four">Remove</th>
           </tr>
-          <tr *ngFor="let product of products" class="row-product__two">
+          <tr *ngFor="let product of currentProducts" class="row-product__two">
             <td>
               <img class="cart-product__image" src={{product.product.imagePath}}>
             </td>
@@ -23,7 +23,7 @@
                 <p class="cart-product__price">{{product.product.price * product.quantity | currency}}</p>
               </td>
             <td class="column__four">
-              <button class="cart-product__button">Remove</button>
+              <button id={{product.product._id}} class="cart-product__button" (click)="handleRemove($event)" type="button">Remove</button>
             </td>
           </tr>
         </table>

@@ -9,16 +9,16 @@
       <input #quantity
         type="number"
         id="quantity"
-        min="0"
+        min="1"
         class="product-detail__input"
         value="1">
       <label
         for="quantity"
-        class="product-detail__label"
+        class="product-detail__label button"
         (click)="handleAddClick(quantity.value)">
         Add
       </label>
-      <label routerLink="/shopping-cart" type="submit" class="product-detail__button" >Check Out</label>
+      <label routerLink="/shopping-cart" type="submit" class="product-detail__button button" >Check Out</label>
     </form>
     <p class="product-detail__description"><span class="product-detail__heading">Description</span>: <br/>{{product.description}}</p>
   </div>

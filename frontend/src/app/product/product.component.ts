@@ -19,8 +19,4 @@ export class ProductComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges){
     this.products = changes.items.currentValue;
   }
-
-  onClick(event) {
-    console.log(event.target)
-  }
 };
