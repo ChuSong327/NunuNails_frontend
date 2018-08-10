@@ -14,7 +14,7 @@ export class MainNavbarComponent implements OnInit {
     },
     {
       title: "size&styles",
-      link: "/size&styles"
+      link: "/size-styles"
     },
     {
       title: "glue",

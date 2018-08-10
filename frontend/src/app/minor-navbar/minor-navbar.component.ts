@@ -21,7 +21,7 @@ export class MinorNavbarComponent implements OnInit {
     },
     {
       title: "Size & Styles",
-      link: "/size&styles"
+      link: "/size-styles"
     },
     {
       title: "Glue",

@@ -28,6 +28,9 @@ import { PageCheckoutComponent } from './page-checkout/page-checkout.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PageCartComponent } from './page-cart/page-cart.component';
 import { CartComponent } from './cart/cart.component';
+import { PageSizeStylesComponent } from './page-size-styles/page-size-styles.component';
+import { PageGlueComponent } from './page-glue/page-glue.component';
+import { PageToolsComponent } from './page-tools/page-tools.component';
 
 @NgModule({
   imports: [
@@ -61,6 +64,9 @@ import { CartComponent } from './cart/cart.component';
     CheckoutComponent,
     PageCartComponent,
     CartComponent,
+    PageSizeStylesComponent,
+    PageGlueComponent,
+    PageToolsComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
