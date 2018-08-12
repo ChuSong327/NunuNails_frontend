@@ -5,8 +5,8 @@
             <th class="cart-product__heading column__one">Product</th>
             <th class="cart-product__heading column__two">Description</th>
             <th class="cart-product__heading column__three">Quantity</th>
-            <th class="cart-product__heading column__four">Price</th>
-            <th class="cart-product__heading column__four">Remove</th>
+            <th class="cart-product__heading column__three">Price</th>
+            <th class="cart-product__heading column__three">Remove</th>
           </tr>
           <tr *ngFor="let product of currentProducts" class="row-product__two">
             <td>
@@ -17,45 +17,47 @@
               <p class="cart-product__description"></p>
             </td>
             <td class="column__three">
-              <input class="cart-product__quantity" type="number" min="0" value={{product.quantity}}>
+              <p class="cart-product__quantity">{{product.quantity}}</p>
             </td>
-            <td class="column__four">
+            <td class="column__three">
                 <p class="cart-product__price">{{product.product.price * product.quantity | currency}}</p>
               </td>
-            <td class="column__four">
-              <button id={{product.product._id}} class="cart-product__button" (click)="handleRemove($event)" type="button">Remove</button>
+            <td class="column__three">
+              <button id={{product.product._id}} class="cart-product__button button" (click)="handleRemove($event)" type="button">Remove</button>
             </td>
           </tr>
-        </table>
-        <table class="cart-cost">
-            <tr>
-            <th class="cart-cost__heading">
-              Total Products:
-            </th>
-            <td class="cart-cost__value">
-              {{totalPrice | currency}}
-            </td>
-          </tr>
+      </table>
+      <table class="cart-cost">
           <tr>
-            <th class="cart-cost__heading">
-              Shipping rates:
-            </th>
-            <td class="cart-cost__value">
-              $10.00
-            </td>
-          </tr>
-          <tr>
-            <th class="cart-cost__heading cart-cost__total">
-              Total:
-            </th>
-            <td class="cart-cost__value cart-cost__total">
-             {{totalPrice + 10.00 | currency}}
-            </td>
-          </tr>
-        </table>
-        <div class="action">
-            <button routerLink="/press-on-nails" class="action__shopping">Continue Shopping</button>
-            <button class="action__checkout">Continue Checkout</button>
-        </div>
+          <th class="cart-cost__heading">
+            Total Products:
+          </th>
+          <td class="cart-cost__value">
+            {{totalPrice | currency}}
+          </td>
+        </tr>
+        <tr>
+          <th class="cart-cost__heading">
+            Shipping rates:
+          </th>
+          <td class="cart-cost__value">
+            $10.00
+          </td>
+        </tr>
+        <tr>
+          <th class="cart-cost__heading cart-cost__total">
+            Total:
+          </th>
+          <td class="cart-cost__value cart-cost__total">
+            {{totalPrice + 10.00 | currency}}
+          </td>
+        </tr>
+      </table>
+      <div class="action">
+          <button routerLink="/press-on-nails" class="action__shopping">Continue Shopping</button>
+          <button routerLink="/checkout"class="action__checkout">Continue Checkout</button>
+      </div>
   </div>
 </div>
+
+

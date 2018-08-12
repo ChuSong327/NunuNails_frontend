@@ -11,9 +11,13 @@
 .cart-tables {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
+.cart-heading {
+  margin: 20rem;
+  font-size: 10rem;
+}
 .cart-product {
   width: 100%;
   letter-spacing: 1px;
@@ -35,31 +39,25 @@
   &__description {
     font-size: 1.4rem;
     color: $color-black;
-
+    text-align: left;
   }
 
-  &__quantity {
-    width: 6rem;
-    height: 3rem;
-    border: solid;
-    border-radius: 1px;
-    border-width: 1px;
-    padding: 0.8rem 1rem;
-
-    &:focus {
-      outline: none;
-    }
+  &__quantity,
+  &__price {
+    text-align: left;
+    font-size: 1.4rem;
+    color: $color-black;
   }
 
   &__button {
-    width: 6rem;
-    height: 3rem;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
     background-color: $color-white;
     border: solid;
     border-radius: 1px;
     border-width: 1px;
     letter-spacing: 1px;
     font-weight: 300;
+    font-size: 1.4rem;
 
     &:hover {
       background-color: $color-default-grey;
@@ -112,17 +110,11 @@
   }
 
   &__two {
-    width: 30rem;
+    width: 25rem;
   }
 
   &__three {
-    width: 10rem;
-    text-align: right;
-  }
-
-  &__four {
-    width: 10rem;
-    text-align: right;
+    width: 15rem;
   }
 }
 
@@ -132,7 +124,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  margin-top: 5rem;
+  padding-top: 5rem;
 
   &__shopping,
   &__checkout {
@@ -141,6 +133,9 @@
     letter-spacing: 1px;
     font-size: 1.3rem;
     color: black;
+    transition: all 0.2s ease-out;
+    font-weight: 300;
+    cursor: pointer;
   }
 
   &__shopping,
@@ -156,23 +151,19 @@
       background-color: $color-default-grey;
       color: $color-white;
       border: none;
-      font-weight: 300;
-      cursor: pointer;
+
     }
   }
 
   &__checkout {
     background-color: $color-default-grey;
     color: $color-white;
-    font-weight: 300;
 
     &:hover {
       background-color: transparent;
       border:solid;
       border-width: 1px;
       color: $color-black;
-      cursor: pointer;
-      font-weight: 400;
     }
   }
 }

@@ -18,6 +18,7 @@ import {
 interface Products {
   product: Product;
   quantity: string;
+  productId: string;
 }
 
 @Component({

@@ -1,2 +1,11 @@
-<app-minor-navbar></app-minor-navbar>
-<app-footer></app-footer>
+<app-minor-navbar [value]="quantity"></app-minor-navbar>
+<app-checkout
+  (updateCartQuantity)="updateQuantity($event)"
+  (updateSubmitStatus)="updateSubmit($event)"
+  (updateCurrentModel)="updateModel($event)"
+  [initModel]="model"
+  >
+</app-checkout>
+<!-- <app-confirmation [submit]="submitted" [purchesedProducts]="products" [purchaseTotal]="totalPrice" [finalModel]="model"></app-confirmation> -->
+
+

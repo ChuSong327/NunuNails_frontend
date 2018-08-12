@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from "@angular/forms";
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from "@angular/common/http";
@@ -31,12 +32,15 @@ import { CartComponent } from './cart/cart.component';
 import { PageSizeStylesComponent } from './page-size-styles/page-size-styles.component';
 import { PageGlueComponent } from './page-glue/page-glue.component';
 import { PageToolsComponent } from './page-tools/page-tools.component';
+import { PageConfirmationComponent } from './page-confirmation/page-confirmation.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,
@@ -67,6 +71,8 @@ import { PageToolsComponent } from './page-tools/page-tools.component';
     PageSizeStylesComponent,
     PageGlueComponent,
     PageToolsComponent,
+    PageConfirmationComponent,
+    ConfirmationComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
