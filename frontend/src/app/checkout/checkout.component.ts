@@ -47,6 +47,6 @@ export class CheckoutComponent implements OnInit {
     this.updateSubmitStatus.emit(true);
     this.updateCurrentModel.emit(this.model);
     localStorage.clear();
-    window.location.href="/NunuNails-Frontend/#/confirmation";
+    window.location.href="/#/confirmation";
   }
 }

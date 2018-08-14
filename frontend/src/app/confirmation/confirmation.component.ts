@@ -33,7 +33,7 @@ export class ConfirmationComponent implements OnInit {
   // model: any;
 
   ngOnInit() {
-    setTimeout(() => {window.location.href = "/NunuNails-Frontend";}, 2000)
+    setTimeout(() => {window.location.href = "/";}, 2000)
     // this.submitted = this.submit;
     // this.products = this.purchesedProducts;
     // this.price = this.purchaseTotal;
