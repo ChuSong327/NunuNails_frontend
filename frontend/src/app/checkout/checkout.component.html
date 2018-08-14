@@ -35,7 +35,7 @@
               <input class="checkout__input short" type="number" [(ngModel)]="model.cvv" name="cvv" required>
           </div>
           <div class="action">
-            <button class="action__button button" type="button" (click)="handleClick($event)">
+            <button class="action__button button" type="button" (click)="handleClick()">
               Demo
             </button>
             <button class="action__button button" type="submit" [disabled]="!checkoutForm.form.valid">

@@ -40,13 +40,13 @@ export class CheckoutComponent implements OnInit {
     this.model.cvv = "230"
   }
 
-  /** Clear the cart quantity, display confirmation component and pass form data to parent component when click submit button */
+  /** display confirmation component and pass form data to parent component when click submit button */
   onSubmit() {
     this.submitted = true;
     this.updateCartQuantity.emit(0);
     this.updateSubmitStatus.emit(true);
     this.updateCurrentModel.emit(this.model);
     localStorage.clear();
-    window.location.href = "confirmation";
+    window.location.href="/NunuNails-Frontend/#/confirmation";
   }
 }

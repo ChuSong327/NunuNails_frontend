@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
+
+
 const Products = require("../../db/products");
 
 router.get("/", (req, res) => {
