@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const Users = require("../db/users");
 
 //db connection
-mongoose.connect("mongodb://localhost:27017/nununails", { useNewUrlParser: true });
+mongoose.connect("mongodb://chu:chu123@ds119702.mlab.com:19702/nununails", { useNewUrlParser: true });
 
 const BUILD_USER_NUM = 10;
 

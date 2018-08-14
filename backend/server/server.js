@@ -19,7 +19,7 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 
 //db connection
-mongoose.connect("mongodb://localhost:27017/nununails", { useNewUrlParser: true });
+mongoose.connect("mongodb://chu:chu123@ds119702.mlab.com:19702/nununails", { useNewUrlParser: true });
 const connection = mongoose.connection;
 
 connection.once("open", () => {
