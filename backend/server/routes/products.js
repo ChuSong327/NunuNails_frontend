@@ -10,7 +10,7 @@ const corsOptions = {
 
 const Products = require("../../db/products");
 
-router.get("/", cors(corsOptions));
+router.options("/", cors(corsOptions));
 router.get("/", cors(corsOptions), (req, res) => {
     Products.find()
         .then(products => {
@@ -21,7 +21,7 @@ router.get("/", cors(corsOptions), (req, res) => {
         })
 });
 
-router.get("/press-on", cors(corsOptions));
+router.options("/press-on", cors(corsOptions));
 router.get("/press-on",cors(corsOptions), (req, res) => {
     Products.find({category: "press-on"})
         .then(products => {
@@ -32,7 +32,7 @@ router.get("/press-on",cors(corsOptions), (req, res) => {
         })
 });
 
-router.get("/glue-on", cors(corsOptions));
+router.options("/glue-on", cors(corsOptions));
 router.get("/glue-on", cors(corsOptions), (req, res) => {
     Products.find({category: "glue-on"})
         .then(products => {
@@ -42,7 +42,7 @@ router.get("/glue-on", cors(corsOptions), (req, res) => {
             res.json("This is an error: ", err);
         })
 });
-router.get("/nude-french", cors(corsOptions));
+router.options("/nude-french", cors(corsOptions));
 router.get("/nude-french", cors(corsOptions), (req, res) => {
     Products.find({category: "nude french"})
         .then(products => {
@@ -53,7 +53,7 @@ router.get("/nude-french", cors(corsOptions), (req, res) => {
         })
 });
 
-router.get("/:product_id", cors(corsOptions));
+router.options("/:product_id", cors(corsOptions));
 router.get("/:product_id", cors(corsOptions),(req, res) => {
     const productId = req.params.product_id;
     Products.findOne({_id: productId})
