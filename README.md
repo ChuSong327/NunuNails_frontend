@@ -4,7 +4,7 @@
 * It is a project created and designed based on the request from an owner of a local Salon, who wants to display and sell her products online. 
 * The project is still in developing process (*backend is not deployed yet*), therefore, the live demo can only display frontend where it doesn't require data from database.
 
-[Live](http://www.nununails.com/#/homepage"Nunu Nails")
+[Live](http://www.nununails.com/#/homepage "Nunu Nails")
 
 ### App Preview (partial)
 
