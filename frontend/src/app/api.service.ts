@@ -7,10 +7,10 @@ const httpOptions = {
   headers: new HttpHeaders({"Content-Type": "application/json"})
 };
 
-const pressOnUrl = "http://localhost:3000/api/products/press-on";
-const glueOnUrl = "http://localhost:3000/api/products/glue-on";
-const nudeFrenchUrl = "http://localhost:3000/api/products/nude-french";
-const productDetail = "http://localhost:3000/api/products/:product_id";
+const pressOnUrl = "nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/press-on";
+const glueOnUrl = "nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/glue-on";
+const nudeFrenchUrl = "nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/nude-french";
+const productDetail = "nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/:product_id";
 
 @Injectable({
   providedIn: 'root'
