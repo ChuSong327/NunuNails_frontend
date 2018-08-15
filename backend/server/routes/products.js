@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const router = express.Router();
+
 const corsOptions = {
     origin:"http://www.nununails.com",
     optionSuccessStatus: 200
@@ -9,7 +10,8 @@ const corsOptions = {
 
 const Products = require("../../db/products");
 
-router.get("/", (req, res) => {
+router.get("/", cors(corsOptions));
+router.get("/", cors(corsOptions), (req, res) => {
     Products.find()
         .then(products => {
             res.json(products);
