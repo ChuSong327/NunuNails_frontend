@@ -1,11 +1,11 @@
 # MEAN/Full Stack Project - Nunu Nails
 
 * Nunu Nails is a full-stack project that applies MEAN stack. 
-* It is a project created and designed based on the request from local Salon, who wants to display and sell their products online. 
+* It is a project created and designed based on the request from a local Salon, who wants to display and sell their products online. 
 * The project's frontend is deployed on Github page; the backend is deployed on AWS using Elastic Beanstalk; database is hosted on mLab.
-* The project is still in developing process， currently working on resolving CORS issue.
+* The project is still in developing process, currently working on resolving CORS issue.
 
-[Live](http://www.nununails.com/#/homepage "Nunu Nails")
+#### [Live](http://www.nununails.com/#/homepage "Nunu Nails")
 
 ### App Preview (partial)
 
