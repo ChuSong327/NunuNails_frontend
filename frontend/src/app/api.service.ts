@@ -7,10 +7,10 @@ const httpOptions = {
   headers: new HttpHeaders({"Content-Type": "application/json"})
 };
 
-const pressOnUrl = "nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/press-on";
-const glueOnUrl = "nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/glue-on";
-const nudeFrenchUrl = "nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/nude-french";
-const productDetail = "nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/:product_id";
+const pressOnUrl = "https://nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/press-on";
+const glueOnUrl = "https://nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/glue-on";
+const nudeFrenchUrl = "https://nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/nude-french";
+const productDetail = "https://nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/:product_id";
 
 @Injectable({
   providedIn: 'root'
@@ -58,7 +58,6 @@ export class ApiService {
   };
 
   getProductDetail(productUrl): Observable<any> {
-    console.log()
     return this.http.get(productUrl, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError)
