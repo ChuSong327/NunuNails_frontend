@@ -90,10 +90,17 @@
 
   &__total {
     font-weight: 400;
-    color: black
+    color: black;
   }
 }
 
+.cart-empty {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: black;
+  letter-spacing: 1.3px;
+  padding: 100px;
+}
 .row-product {
   &__one {
     height: 5rem;

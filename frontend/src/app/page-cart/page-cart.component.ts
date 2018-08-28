@@ -31,7 +31,8 @@ export class PageCartComponent implements OnInit {
 
   /** Get products in the shopping cart */
   private get getCartFromStorage(): Products[] {
-    if(localStorage.length) {
+    if(localStorage) {
+
       return JSON.parse(localStorage.getItem("cart"));
     }
   }

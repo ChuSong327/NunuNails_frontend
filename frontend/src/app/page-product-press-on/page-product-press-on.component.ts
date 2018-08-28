@@ -15,7 +15,6 @@ export class PageProductPressOnComponent implements OnInit {
   ngOnInit() {
     this.api.getPressOnNails()
       .subscribe(res => {
-        // console.log(res);
         this.products = res;
       }, err => {
         console.log(err);
