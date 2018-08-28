@@ -19,12 +19,18 @@ export class PageProductDetailComponent implements OnInit {
   quantity: any;
 
   ngOnInit() {
-    const productUrl = `http://nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/${this.route.snapshot.params.product_id}`;
-    this.api.getProductDetail(productUrl)
-      .subscribe(res => {
-        this.product = res;
-      }, err => {
-        console.log(err);
+    this.route.paramMap
+      .subscribe(params => {
+        let id = params.get("product_id");
+        const productUrl = `http://nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/${id}`;
+        this.api.getProductDetail(productUrl)
+          .subscribe(
+            res => {
+              this.product = res;
+          },
+            err => {
+              console.log(err);
+          })
       })
   }
 
