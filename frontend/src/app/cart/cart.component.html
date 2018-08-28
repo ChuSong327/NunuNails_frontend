@@ -24,7 +24,7 @@
                 <p class="cart-product__price">{{product.product.price * product.quantity | currency}}</p>
               </td>
             <td class="column__three">
-              <button id={{product.product._id}} class="cart-product__button button" (click)="handleRemove($event)" type="button">Remove</button>
+              <button id={{product.product._id}} class="cart-product__button button" (click)="handleRemove(product)" type="button">Remove</button>
             </td>
           </tr>
         </table>

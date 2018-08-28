@@ -49,16 +49,14 @@ export class CartComponent implements OnInit {
     this.quantity = changes.value.currentValue;
   }
 
-  handleRemove(event){
+  handleRemove(product){
     /** Remove the selected item from cart, update the total price of left items, and update the number of quantity */
-    for(const product of this.currentProducts) {
-      if(event.target.id === product.productId) {
-        let index = this.currentProducts.indexOf(product);
-        this.currentProducts.splice(index, 1);
-        this.totalPrice = Number(this.totalPrice) - Number(product.product.price) * Number(product.quantity);
-        this.quantity = Number(this.quantity) - Number(product.quantity);
-      }
-    }
+    /** Pass in selected product directly instead of using event.target */
+    let index = this.currentProducts.indexOf(product);
+    this.currentProducts.splice(index, 1);
+    this.totalPrice = Number(this.totalPrice) - Number(product.product.price) * Number(product.quantity);
+    this.quantity = Number(this.quantity) - Number(product.quantity);
+
 
     /** Emit the updated products, quantity, and totalPrice to Parent.  */
     this.updateProducts.emit({products: this.currentProducts, quantity: this.quantity, totalPrice: this.totalPrice});
