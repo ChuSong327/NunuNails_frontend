@@ -14,10 +14,12 @@ export class PageProductPressOnComponent implements OnInit {
 
   ngOnInit() {
     this.api.getPressOnNails()
-      .subscribe(res => {
-        this.products = res;
-      }, err => {
-        console.log(err);
+      .subscribe(
+        res => {
+          this.products = res;
+      },
+        err => {
+          console.log(err);
       })
   }
 }

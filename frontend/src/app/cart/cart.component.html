@@ -1,5 +1,5 @@
 <div class="cart">
-  <div *ngIf="currentProducts.length > 0; then productList else emptyCart" class="cart-tables"> </div>
+  <div *ngIf="currentProducts && currentProducts.length > 0; then productList else emptyCart" class="cart-tables"> </div>
       <ng-template #productList>
         <table class="cart-product">
           <tr class="row-product__one">

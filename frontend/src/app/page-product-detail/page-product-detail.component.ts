@@ -32,6 +32,13 @@ export class PageProductDetailComponent implements OnInit {
               console.log(err);
           })
       })
+    // const productUrl = `http://nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/${this.route.snapshot.params.product_id}`;
+    // this.api.getProductDetail(productUrl)
+      // .subscribe(res => {
+      //   this.product = res;
+      // }, err => {
+      //   console.log(err);
+      // })
   }
 
   getQuantity(value) {

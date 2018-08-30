@@ -7,7 +7,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
   styleUrls: ['./checkout.component.sass']
 })
 export class CheckoutComponent implements OnInit {
- 
+
   @Input() submit;
   @Input() initModel;
   @Output() updateCartQuantity = new EventEmitter<any>();
@@ -48,5 +48,5 @@ export class CheckoutComponent implements OnInit {
     this.updateCurrentModel.emit(this.model);
     localStorage.clear();
     window.location.href="/#/confirmation";
-  }你
+  }
 }

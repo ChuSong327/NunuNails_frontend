@@ -25,14 +25,13 @@ export class PageCartComponent implements OnInit {
   /** Define products stored in localStorage */
   products: Products[] = [];
 
-  totalPrice: number;
+  totalPrice: number = 0;
 
-  quantity: number;
+  quantity: number = 0;
 
   /** Get products in the shopping cart */
   private get getCartFromStorage(): Products[] {
     if(localStorage) {
-
       return JSON.parse(localStorage.getItem("cart"));
     }
   }
@@ -40,8 +39,10 @@ export class PageCartComponent implements OnInit {
   /** Get the total price of all products in the shopping cart */
   private getTotalPrice(products)  {
     let total = 0;
-    for(const product of products) {
-      total = Number(total) + Number(product.product.price) * Number(product.quantity);
+    if(products) {
+      for(const product of products) {
+        total = Number(total) + Number(product.product.price) * Number(product.quantity);
+      }
     }
     return total;
   }
@@ -49,8 +50,11 @@ export class PageCartComponent implements OnInit {
   /** Get total quantity of items in shopping cart */
   private getTotalQuantity(products) {
     let total = 0;
-    for(const product of products) {
-      total = total + Number(product.quantity);
+      if(products) {
+
+      for(const product of products) {
+        total = total + Number(product.quantity);
+      }
     }
     return total;
   }
