@@ -22,7 +22,7 @@ export class PageProductDetailComponent implements OnInit {
     this.route.paramMap
       .subscribe(params => {
         let id = params.get("product_id");
-        const productUrl = `http://nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/${id}`;
+        const productUrl = `https://nununailsbackend.herokuapp.com/api/products/${id}`;
         this.api.getProductDetail(productUrl)
           .subscribe(
             res => {
