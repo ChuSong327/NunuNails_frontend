@@ -7,9 +7,9 @@ const httpOptions = {
   headers: new HttpHeaders({"Content-Type": "application/json"})
 };
 
-const pressOnUrl = "http://nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/press-on";
-const glueOnUrl = "http://nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/glue-on";
-const nudeFrenchUrl = "http://nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/nude-french";
+const pressOnUrl = "https://nununailsbackend.herokuapp.com/api/products/press-on";
+const glueOnUrl = "https://nununailsbackend.herokuapp.com/api/products/glue-on";
+const nudeFrenchUrl = "https://nununailsbackend.herokuapp.com/api/products/nude-french";
 // const productDetail = "http://nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/:product_id";
 
 @Injectable({
