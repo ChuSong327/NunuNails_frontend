@@ -1,68 +1,88 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http";
-import { Observable, of, throwError, ObservableLike } from 'rxjs';
-import { catchError, tap, map } from "rxjs/operators";
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpErrorResponse
+} from '@angular/common/http';
+import {
+  Observable,
+  of,
+  throwError,
+  ObservableLike
+} from 'rxjs';
+import { catchError, tap, map } from 'rxjs/operators';
+import {BASE} from './url';
 
 const httpOptions = {
-  headers: new HttpHeaders({"Content-Type": "application/json"})
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
 };
 
-const pressOnUrl = "http://nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/press-on";
-const glueOnUrl = "http://nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/glue-on";
-const nudeFrenchUrl = "http://nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/nude-french";
-const productDetail = "http://nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/:product_id";
+const pressOnUrl =
+  `${BASE}/api/products/press-on`;
+const glueOnUrl =
+  `${BASE}/api/products/glue-on`;
+const nudeFrenchUrl =
+  `${BASE}/api/products/nude-french`;
+const productDetail =
+  `${BASE}/api/products/:product_id`;
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class ApiService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  //error handle function
+// error handle function
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
-      console.log("An error occurred: ", error.error.message);
+      console.log(
+        'An error occurred: ',
+        error.error.message
+      );
     } else {
-      console.error(`Backend returned code ${error.status}, ` + `body was: ${error.error}`);
+      console.error(
+        `Backend returned code ${error.status}, ` +
+          `body was: ${error.error}`
+      );
     }
-    return throwError("Something bad happened; please try again later");
-  };
+    return throwError(
+      'Something bad happened; please try again later'
+    );
+  }
 
-  //extract response data function
+  /** extract response data function */
   private extractData(res: Response) {
-    let body = res;
-    return body || { };
-  };
+    const body = res;
+    return body || {};
+  }
 
   getPressOnNails(): Observable<any> {
     return this.http.get(pressOnUrl, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError)
-    )
-  };
+    );
+  }
 
   getGlueOnNails(): Observable<any> {
     return this.http.get(glueOnUrl, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError)
-    )
-  };
+    );
+  }
 
   getNudeFrenchNails(): Observable<any> {
     return this.http.get(nudeFrenchUrl, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError)
-    )
-  };
+    );
+  }
 
   getProductDetail(productUrl): Observable<any> {
     return this.http.get(productUrl, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError)
-    )
-  };
-
-
+    );
+  }
 }

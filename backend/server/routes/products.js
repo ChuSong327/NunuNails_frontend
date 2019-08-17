@@ -4,7 +4,7 @@ const cors = require("cors");
 const router = express.Router();
 
 const corsOptions = {
-    origin:"http://www.nununails.com",
+    origin:["http://www.nununails.com", "http://localhost:4200"],
     optionSuccessStatus: 200
 };
 

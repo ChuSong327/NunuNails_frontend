@@ -1,7 +1,7 @@
 import { Component, OnInit, } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from "../api.service";
-
+import {BASE} from '../url';
 
 @Component({
   selector: 'app-page-product-detail',
@@ -19,7 +19,7 @@ export class PageProductDetailComponent implements OnInit {
   quantity: any;
 
   ngOnInit() {
-    const productUrl = `http://nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/${this.route.snapshot.params.product_id}`;
+    const productUrl = `${BASE}/api/products/${this.route.snapshot.params.product_id}`;
     this.api.getProductDetail(productUrl)
       .subscribe(res => {
         this.product = res;

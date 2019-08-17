@@ -2,9 +2,11 @@ const createError = require("http-errors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const express = require("express");
 const app = express();
+app.use(cors());
 
 //import routers
 const productsRouter = require("./routes/products");
@@ -12,19 +14,26 @@ const usersRouter = require("./routes/users");
 
 //Use middleware
 app.use(express.json());
-app.use(express.urlencoded({
-    extended: false
-})); 
+app.use(
+    express.urlencoded({
+        extended: false
+    })
+);
 app.use(cookieParser());
 app.use(bodyParser.json());
 
 //db connection
-mongoose.connect("mongodb://chu:chu123@ds119702.mlab.com:19702/nununails", { useNewUrlParser: true });
+mongoose.connect(
+    "mongodb://chu:chu123@ds119702.mlab.com:19702/nununails",
+    { useNewUrlParser: true }
+);
 const connection = mongoose.connection;
 
 connection.once("open", () => {
-    console.log("MongoDB database connection established successfully!");
-})
+    console.log(
+        "MongoDB database connection established successfully!"
+    );
+});
 
 //routes
 app.use("/api/products", productsRouter);
@@ -38,7 +47,8 @@ app.use((req, res, next) => {
 //error handler
 app.use((err, req, res) => {
     res.locals.message = err.message;
-    res.locals.error = req.app.get('env') === 'development' ? err: {};
+    res.locals.error =
+        req.app.get("env") === "development" ? err : {};
     res.status(err.status || 500);
     res.render("error");
 });
@@ -47,4 +57,4 @@ const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
     console.log("App is listening on port: " + port);
-})
+});
