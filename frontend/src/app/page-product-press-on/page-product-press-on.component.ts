@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from "../api.service";
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-page-product-press-on',
@@ -14,10 +14,12 @@ export class PageProductPressOnComponent implements OnInit {
 
   ngOnInit() {
     this.api.getPressOnNails()
-      .subscribe(res => {
-        this.products = res;
-      }, err => {
-        console.log(err);
-      })
+      .subscribe(
+        res => {
+          this.products = res;
+      },
+        err => {
+          console.log(err);
+      });
   }
 }

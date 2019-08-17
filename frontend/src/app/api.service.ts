@@ -1,17 +1,7 @@
 import { Injectable } from '@angular/core';
-import {
-  HttpClient,
-  HttpHeaders,
-  HttpErrorResponse
-} from '@angular/common/http';
-import {
-  Observable,
-  of,
-  throwError,
-  ObservableLike
-} from 'rxjs';
-import { catchError, tap, map } from 'rxjs/operators';
-import {BASE} from './url';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -19,14 +9,10 @@ const httpOptions = {
   })
 };
 
-const pressOnUrl =
-  `${BASE}/api/products/press-on`;
-const glueOnUrl =
-  `${BASE}/api/products/glue-on`;
-const nudeFrenchUrl =
-  `${BASE}/api/products/nude-french`;
-const productDetail =
-  `${BASE}/api/products/:product_id`;
+const pressOnUrl = 'https://nununailsbackend.herokuapp.com/api/products/press-on';
+const glueOnUrl = 'https://nununailsbackend.herokuapp.com/api/products/glue-on';
+const nudeFrenchUrl = 'https://nununailsbackend.herokuapp.com/api/products/nude-french';
+// const productDetail = "http://nununails-backend-dev.us-west-1.elasticbeanstalk.com/api/products/:product_id";
 
 @Injectable({
   providedIn: 'root'
