@@ -1,4 +1,4 @@
-const isProd = false;
+const isProd = true;
 export const BASE = isProd
-  ? "https://nununailsbackend.herokuapp.com"
+  ? "https://nununails.herokuapp.com"
   : "http://localhost:3000";

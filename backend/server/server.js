@@ -38,6 +38,9 @@ connection.once("open", () => {
 //routes
 app.use("/api/products", productsRouter);
 app.use("/api/users", usersRouter);
+app.get("/", (_, res) => {
+    res.status(200).json("Project root!");
+});
 
 //catch 404 and forward to error handler
 app.use((req, res, next) => {
