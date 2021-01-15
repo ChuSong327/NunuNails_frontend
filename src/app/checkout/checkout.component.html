@@ -1,0 +1,151 @@
+<div id="popup1" class="overlay" >
+    <div class="popup">
+      <div class="checkout__form">
+        <h3 class="checkout__heading">Billing Information</h3>
+        <form #checkoutForm="ngForm" (ngSubmit)="onSubmit()">
+          <h4 class="checkout__section-title">Billing Address</h4>
+          <div class="checkout__row">
+              <input
+                #firstName="ngModel"
+                class="checkout__input"
+                type="text"
+                placeholder="First Name"
+                [(ngModel)]="model.firstName"
+                name="firstName"
+                required>
+              <input
+                #lastName="ngModel"
+                class="checkout__input"
+                type="text"
+                placeholder="Last Name"
+                [(ngModel)]="model.lastName"
+                name="lastName"
+                required>
+              <div *ngIf="firstName.touched && !firstName.valid" class="error">
+                First Name is Required
+              </div>
+              <div *ngIf="lastName.touched && !lastName.valid" class="error">
+                Last Name is Required
+              </div>
+          </div>
+          <div class="checkout__row">
+              <input
+                #email="ngModel"
+                class="checkout__input"
+                type="email"
+                placeholder="Email"
+                [(ngModel)]="model.email"
+                name="email"
+                required>
+              <div *ngIf="email.touched && !email.valid" class="error">
+                Email is Required
+              </div>
+          </div>
+          <div class="checkout__row">
+              <input
+                #address="ngModel"
+                class="checkout__input"
+                type="text"
+                placeholder="Address"
+                [(ngModel)]="model.address"
+                name="adress"
+                required>
+              <div *ngIf="address.touched && !address.valid" class="error">
+                Address is Required
+              </div>
+          </div>
+          <div class="checkout__row">
+              <input
+                #city="ngModel"
+                class="checkout__input"
+                type="text"
+                placeholder="City"
+                [(ngModel)]="model.city"
+                name="city"
+                required>
+              <input
+                #state="ngModel"
+                class="checkout__input"
+                type="text"
+                placeholder="State"
+                [(ngModel)]="model.state"
+                name="state"
+                required>
+              <input
+                #zip="ngModel"
+                class="checkout__input"
+                type="number"
+                placeholder="Zip Code"
+                [(ngModel)]="model.zip"
+                name="zip"
+                required>
+              <div *ngIf="city.touched && !city.valid" class="error">
+                City is Required
+              </div>
+              <div *ngIf="state.touched && !state.valid" class="error">
+                state is Required
+              </div>
+              <div *ngIf="zip.touched && !zip.valid" class="error">
+                Zip is Required
+              </div>
+          </div>
+          <h4 class="checkout__section-title">Payment</h4>
+          <div>
+            <label class="checkout__label" for="name-on-card">Name On Card</label>
+            <input
+              #name="ngModel"
+              class="checkout__input payment"
+              type="text"
+              [(ngModel)]="model.cardName"
+              name="cardName"
+              required>
+            <div *ngIf="name.touched && !name.valid" class="error">Name is Required</div>
+          </div>
+          <div>
+            <label class="checkout__label" for="card-number">Credit Card Number</label>
+            <input
+              #number="ngModel"
+              class="checkout__input payment"
+              type="text"
+              [(ngModel)]="model.cardNumber"
+              name="cardNumber"
+              required>
+            <div *ngIf="number.touched && !number.valid" class="error">
+              Card Number is Required
+            </div>
+          </div>
+          <div class="checkout__row">
+              <label class="checkout__label" for="expiration-date">
+                Exp. Date
+              </label>
+              <input
+                class="checkout__input short"
+                type="text"
+                [(ngModel)]="model.exp"
+                name="exp"
+                required>
+              <label class="checkout__label" for="cvv">
+                CVV
+              </label>
+              <input
+                class="checkout__input short"
+                type="number"
+                [(ngModel)]="model.cvv"
+                name="cvv"
+                required>
+          </div>
+          <div class="action">
+            <button class="action__button button" type="button" (click)="handleClick()">
+              Demo
+            </button>
+            <button class="action__button button" type="submit" [disabled]="!checkoutForm.form.valid">
+              Submit
+            </button>
+            <button routerLink="/shopping-cart" class="action__button button">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>

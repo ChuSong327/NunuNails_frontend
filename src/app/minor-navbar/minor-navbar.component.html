@@ -1,0 +1,11 @@
+<header class="nav-header" id="background">
+  <div class="nav-brand-name">
+    <h3><a routerLink="/homepage" class="nav-brand-name__link">Nunu Nails</a></h3>
+  </div>
+  <nav class="nav-minor">
+    <ul>
+      <li *ngFor="let item of items" class="nav-minor__item"><a routerLink={{item.link}} class="nav-minor__link">{{item.title}}</a></li>
+      <i routerLink="/shopping-cart" class="fa fa-shopping-cart nav-minor__cart button" aria-hidden="true"></i><span class="nav-minor__quantity">{{quantity}}</span>
+    </ul>
+  </nav>
+</header>

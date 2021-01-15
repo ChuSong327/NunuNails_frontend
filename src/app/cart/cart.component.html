@@ -1,0 +1,68 @@
+<div class="cart">
+  <div *ngIf="currentProducts && currentProducts.length > 0; then productList else emptyCart" class="cart-tables"> </div>
+      <ng-template #productList>
+        <table class="cart-product">
+          <tr class="row-product__one">
+            <th class="cart-product__heading column__one">Product</th>
+            <th class="cart-product__heading column__two">Description</th>
+            <th class="cart-product__heading column__three">Quantity</th>
+            <th class="cart-product__heading column__three">Price</th>
+            <th class="cart-product__heading column__three">Remove</th>
+          </tr>
+          <tr *ngFor="let product of currentProducts" class="row-product__two">
+            <td>
+              <img class="cart-product__image" src={{product.product.imagePath}}>
+            </td>
+            <td>
+              <h4 class="cart-product__description">{{product.product.name}}</h4>
+              <p class="cart-product__description"></p>
+            </td>
+            <td class="column__three">
+              <p class="cart-product__quantity">{{product.quantity}}</p>
+            </td>
+            <td class="column__three">
+                <p class="cart-product__price">{{product.product.price * product.quantity | currency}}</p>
+              </td>
+            <td class="column__three">
+              <button id={{product.product._id}} class="cart-product__button button" (click)="handleRemove(product)" type="button">Remove</button>
+            </td>
+          </tr>
+        </table>
+        <table class="cart-cost">
+          <tr>
+          <th class="cart-cost__heading">
+            Total Products:
+          </th>
+          <td class="cart-cost__value">
+            {{totalPrice | currency}}
+          </td>
+        </tr>
+        <tr>
+          <th class="cart-cost__heading">
+            Shipping rates:
+          </th>
+          <td class="cart-cost__value">
+            $10.00
+          </td>
+        </tr>
+        <tr>
+          <th class="cart-cost__heading cart-cost__total">
+            Total:
+          </th>
+          <td class="cart-cost__value cart-cost__total">
+            {{totalPrice + 10.00 | currency}}
+          </td>
+        </tr>
+        </table>
+        <div class="action">
+          <button routerLink="/press-on-nails" class="action__shopping">Continue Shopping</button>
+          <button routerLink="/checkout"class="action__checkout">Continue Checkout</button>
+        </div>
+      </ng-template>
+      <ng-template #emptyCart>
+        <h3 class="cart-empty">No Items in Cart Yet</h3>
+      </ng-template>
+
+</div>
+
+

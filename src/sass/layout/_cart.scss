@@ -1,0 +1,180 @@
+@import "../abstracts/variables";
+
+.cart {
+  margin-top: 5rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart-tables {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cart-heading {
+  margin: 20rem;
+  font-size: 10rem;
+}
+.cart-product {
+  width: 100%;
+  letter-spacing: 1px;
+  border-bottom: solid;
+  border-width: 1px;
+
+  &__heading {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: left;
+    color: $color-black;
+  }
+
+  &__image {
+    height: 15rem;
+    width: 12rem;
+  }
+
+  &__description {
+    font-size: 1.4rem;
+    color: $color-black;
+    text-align: left;
+  }
+
+  &__quantity,
+  &__price {
+    text-align: left;
+    font-size: 1.4rem;
+    color: $color-black;
+  }
+
+  &__button {
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    background-color: $color-white;
+    border: solid;
+    border-radius: 1px;
+    border-width: 1px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size: 1.4rem;
+
+    &:hover {
+      background-color: $color-default-grey;
+      color:  $color-white;
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.cart-cost {
+  width: 30%;
+  align-self: flex-end;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+
+
+  &__heading {
+    text-align: left;
+    font-weight: 300;
+  }
+
+  &__value {
+    text-align: right;
+  }
+
+  &__total {
+    font-weight: 400;
+    color: black;
+  }
+}
+
+.cart-empty {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: black;
+  letter-spacing: 1.3px;
+  padding: 100px;
+}
+.row-product {
+  &__one {
+    height: 5rem;
+  }
+
+  &__two {
+    height: 18rem;
+  }
+}
+
+.column {
+  &__one {
+    width: 20rem;
+  }
+
+  &__two {
+    width: 25rem;
+  }
+
+  &__three {
+    width: 15rem;
+  }
+}
+
+.action {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 5rem;
+
+  &__shopping,
+  &__checkout {
+    height: 3.5rem;
+    width: 15rem;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+    color: black;
+    transition: all 0.2s ease-out;
+    font-weight: 300;
+    cursor: pointer;
+  }
+
+  &__shopping,
+  &__checkout:focus {
+    outline: none;
+  }
+
+  &__shopping {
+    border: solid;
+    border-width: 1px;
+
+    &:hover {
+      background-color: $color-default-grey;
+      color: $color-white;
+      border: none;
+
+    }
+  }
+
+  &__checkout {
+    background-color: $color-default-grey;
+    color: $color-white;
+
+    &:hover {
+      background-color: transparent;
+      border:solid;
+      border-width: 1px;
+      color: $color-black;
+    }
+  }
+}
+
+
+
+

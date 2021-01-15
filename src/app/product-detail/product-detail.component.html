@@ -1,0 +1,25 @@
+<div *ngIf="product" class="product-detail">
+  <img
+    src={{product.imagePath}}
+    class="product-detail__image">
+  <div class="product-detail__info">
+    <h2 class="product-detail__title">{{product.name}}</h2>
+    <h4 class="product-detail__price">{{product.price | currency}}</h4>
+    <form class="product-detail__quantity">
+      <input #quantity
+        type="number"
+        id="quantity"
+        min="1"
+        class="product-detail__input"
+        value="1">
+      <label
+        for="quantity"
+        class="product-detail__label button"
+        (click)="handleAddClick(quantity.value)">
+        Add
+      </label>
+      <label routerLink="/shopping-cart" type="submit" class="product-detail__button button" >Check Out</label>
+    </form>
+    <p class="product-detail__description"><span class="product-detail__heading">Description</span>: <br/>{{product.description}}</p>
+  </div>
+</div>

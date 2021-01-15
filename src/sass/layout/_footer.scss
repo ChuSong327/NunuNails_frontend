@@ -1,0 +1,41 @@
+@import "../abstracts/variables";
+
+.footer {
+  border-top: 1px solid;
+  padding: 8rem 0;
+  background-color: $color-orange-light-1;
+
+  &__list {
+    list-style: none;
+    padding: 0 0;
+  }
+
+  &__item {
+    padding: 2% 15%;
+    &:hover {
+      transform: translateY(-1px);
+    }
+    &:active {
+      transform: translateY(0);
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color:inherit;
+
+  }
+
+  &__title--subscription {
+    text-align: left;
+  }
+
+  &__title--social {
+    text-align: center;
+    padding-top: 2.5rem;
+    // display: inline-block;
+  }
+
+  &__icon {
+    padding-left: 11rem;
+  }
+}
